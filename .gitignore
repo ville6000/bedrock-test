@@ -1,1 +1,4 @@
 website/bedrock/web/app/cache/
+.DS_Store
+.idea
+.vscode

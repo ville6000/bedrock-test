@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bdb8d77e6dbf7e499f374d4f4b333958",
+    "content-hash": "a0e0d85462a01a5d8ac0c1fb89fcbc4a",
     "packages": [
         {
             "name": "brick/math",
@@ -212,6 +212,81 @@
                 }
             ],
             "time": "2021-09-13T08:19:44+00:00"
+        },
+        {
+            "name": "devgeniem/acf-codifier",
+            "version": "1.38.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/devgeniem/acf-codifier.git",
+                "reference": "40f008387dc33aaffbec02848b2cf2c193f4115d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/devgeniem/acf-codifier/zipball/40f008387dc33aaffbec02848b2cf2c193f4115d",
+                "reference": "40f008387dc33aaffbec02848b2cf2c193f4115d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "conflict": {
+                "devgeniem/redipress": "<2.0"
+            },
+            "require-dev": {
+                "victorjonsson/markdowndocs": "^1.3"
+            },
+            "type": "wordpress-muplugin",
+            "autoload": {
+                "psr-4": {
+                    "Geniem\\ACF\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Miika Arponen",
+                    "email": "miika@geniem.com",
+                    "homepage": "http://geniem.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "ACF Codifier",
+            "keywords": [
+                "acf",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/devgeniem/acf-codifier/issues",
+                "source": "https://github.com/devgeniem/acf-codifier/tree/1.38.2"
+            },
+            "time": "2023-01-25T10:07:26+00:00"
+        },
+        {
+            "name": "devgeniem/ext-advanced-custom-fields-pro",
+            "version": "6.0.7",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:devgeniem/ext-advanced-custom-fields-pro.git",
+                "reference": "61b0d4b7386de8062161e7fb5b35d5c7fb004dfc"
+            },
+            "type": "wordpress-plugin",
+            "extra": {
+                "installer-name": "advanced-custom-fields-pro"
+            },
+            "license": [
+                "GPLv2 or later"
+            ],
+            "authors": [
+                {
+                    "name": "elliotcondon"
+                }
+            ],
+            "description": "Customise WordPress with powerful, professional and intuitive fields",
+            "time": "2023-02-28T09:04:06+00:00"
         },
         {
             "name": "doctrine/inflector",
