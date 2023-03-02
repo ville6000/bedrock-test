@@ -37,13 +37,14 @@
     }
   ],
   "require": {
-    "php": ">=7.1",
+    "php": "^8.1",
     "composer/installers": "^1.4",
-    "vlucas/phpdotenv": "^3.4.0",
+    "vlucas/phpdotenv": "^5.5.0",
     "oscarotero/env": "^1.2.0",
     "roots/wordpress": "6.1.1",
     "roots/wp-config": "1.0.0",
-    "roots/wp-password-bcrypt": "1.0.0"
+    "roots/wp-password-bcrypt": "1.0.0",
+    "roots/acorn": "3.1"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.4.2",
@@ -60,6 +61,9 @@
   "scripts": {
     "post-root-package-install": [
       "php -r \"copy('.env.example', '.env');\""
+    ],
+    "post-autoload-dump": [
+      "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
     ],
     "test": [
       "phpcs"
