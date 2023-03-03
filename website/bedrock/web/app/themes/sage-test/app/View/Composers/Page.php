@@ -26,14 +26,35 @@ class Page extends Composer
         return get_the_title();
     }
 
-    public function fields() {
-        return get_fields();
+    public function layouts() {
+
+        $main_layouts = get_field( 'layouts' );
+
+        return $this->format_acf_flexible_layouts( $main_layouts, [
+            'small_highlights_layout' => [ SmallHighlightsLayout::class, 'format_layout' ],
+        ] );
     }
 
-    public function layouts() {
-        return [
-            'small-highlights-layout' => SmallHighlightsLayout::format_layout(),
-        ];
+    private function format_acf_flexible_layouts( array $layouts, array $callbacks ) {
+        
+        $handled = [];
+
+        if ( empty( $fields ) ) {
+            return $handled;
+        }
+
+        foreach ( $layouts as $layout ) {
+
+            if ( empty( $layout['acf_fc_layout'] ) ) {
+                continue;
+            }
+
+            if ( array_key_exists( $layout['acf_fc_layout'], $callbacks ) ) {
+                $handled[] = call_user_func( $layout['acf_fc_layout'], $layout );
+            }
+        }
+    
+        return $handled;
     }
 
     /**
