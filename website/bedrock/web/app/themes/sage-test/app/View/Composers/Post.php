@@ -66,4 +66,15 @@ class Post extends Composer
 
         return get_the_title();
     }
+
+    /**
+     * 
+     *
+     * @return string
+     */
+    public function with() {
+        return [
+            'ingress' => get_field( 'ingress' ),
+        ];
+    }
 }

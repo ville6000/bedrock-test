@@ -26,7 +26,7 @@ class App extends Composer
             'siteName' => $this->siteName(),
         ];
     }
-
+    
     /**
      * Returns the site name.
      *
