@@ -4,7 +4,7 @@
  */
 
 $templates = [
-    \App\Lib\ACF\Templates\Page::class,
+    \App\ACF\Templates\Page::class,
 ];
 
 $templates = \apply_filters('kpo/acf/templates', $templates);

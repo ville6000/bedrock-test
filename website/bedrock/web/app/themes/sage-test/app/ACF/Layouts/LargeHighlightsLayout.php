@@ -2,14 +2,14 @@
 
 namespace App\ACF\Layouts;
 
-class SmallHighlightsLayout extends \Geniem\ACF\Field\Flexible\Layout
+class LargeHighlightsLayout extends \Geniem\ACF\Field\Flexible\Layout
 {
-    const KEY = 'small_highlights';
+    const KEY = 'large_highlights';
 
     public function __construct(string $key)
     {
         parent::__construct(
-            'Pienet nostot',
+            'Suuret nostot',
             $key . '/' . self::KEY,
             self::KEY
         );
@@ -30,7 +30,7 @@ class SmallHighlightsLayout extends \Geniem\ACF\Field\Flexible\Layout
     {
         return [
             'layout' => $layout['acf_fc_layout'],
-            'template' => 'components.small-highlights',
+            'template' => 'partials.components.small-highlights',
             'data'   => $layout['highlights']
         ];
     }

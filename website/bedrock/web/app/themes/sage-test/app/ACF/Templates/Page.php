@@ -2,6 +2,7 @@
 
 namespace App\ACF\Templates;
 
+use App\ACF\Layouts;
 use Geniem\ACF\Exception;
 use Geniem\ACF\Group;
 use Geniem\ACF\Field;
@@ -41,22 +42,30 @@ class Page
 
     protected function get_fields(string $key): array
     {
-        
         $strings = [
-            'tab'    => 'Sisältö',
+            'tab' => 'Sisältö',
             'button' => 'Lisää uusi lohko',
         ];
 
-        $tab = ( new Field\Tab( $strings['tab'] ) )
-            ->set_placement( 'left' );
+        $tab = (new Field\Tab($strings['tab']))
+            ->set_placement('left');
 
-        $layouts_field = ( new Field\FlexibleContent( $strings['tab'] ) )
-            ->set_key( "${key}_layouts" )
-            ->set_name( 'layouts' )
-            ->set_button_label( $strings['button'] )
+        $layouts_field = (new Field\FlexibleContent($strings['tab']))
+            ->set_key("{$key}_layouts")
+            ->set_name('layouts')
+            ->set_button_label($strings['button'])
             ->hide_label();
 
+        $layouts_field->add_layout(
+            new Layouts\SmallHighlightsLayout($layouts_field->get_key())
+        );
+
+        $layouts_field->add_layout(
+            new Layouts\LargeHighlightsLayout($layouts_field->get_key())
+        );
+
         return [
+            $tab,
             $layouts_field,
         ];
     }
