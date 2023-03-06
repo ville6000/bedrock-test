@@ -95,9 +95,13 @@ class ExampleBlock
         ];
     }
 
-    public function with(array $data): array
+    public function with(array $data, Block $instance, array $block ): array
     {
-        return $data;
+        return [
+            'data' => $data,
+            'instance' => $instance,
+            'block' => $block,
+        ];
     }
 
     /**
